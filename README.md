@@ -48,7 +48,7 @@ The aim of this project is to demonstrate SQL skills and techniques typically us
        order by num_payments desc;
 
  6. >**Create a new database named Customers_Orders and add the following tables as per the description
-         Create a table named Customers to store customer information. Include the following columns
+         Create a table named Customers to store customer information. Include the following columns.
          Add a NOT NULL constraint to the first_name and last_name columns to ensure they always have a value.**
     
         A. customer_id: This should be an integer set as the PRIMARY KEY and AUTO_INCREMENT.
