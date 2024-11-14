@@ -1,4 +1,4 @@
-# MySQL-Database-Analysis
+# MySQL-Database-Analysis Project
 
 Project Title : Retail and Sales Analysis <br />
 Level : Beginner to Advanced <br />
