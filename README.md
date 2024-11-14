@@ -102,7 +102,6 @@ The aim of this project is to demonstrate SQL skills and techniques typically us
           limit 5;
 
 9. >**Create a table project with below fields.**
-
      ●	EmployeeID : integer set as the PRIMARY KEY and AUTO_INCREMENT. <br />
      ●	FullName: varchar(50) with no null values <br />
      ●	Gender : Values should be only ‘Male’  or ‘Female’ <br />
