@@ -172,3 +172,17 @@ The aim of this project is to demonstrate SQL skills and techniques typically us
                     pl.productLine;
                     select * from product_category_sales;
 
+12. >**Rank the customers based on their order frequency**
+
+    		SELECT c.customerName,
+    		 COUNT(o.orderNumber) AS order_count,
+    		 RANK() OVER (ORDER BY COUNT(o.orderNumber) DESC) AS customer_rank
+		 FROM customers c
+		 JOIN 
+    		 orders o ON c.customerNumber = o.customerNumber
+		 GROUP BY 
+    		 c.customerNumber, c.customerName
+		 ORDER BY 
+    		 customer_rank;
+     		
+
