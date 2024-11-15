@@ -156,8 +156,7 @@ The aim of this project is to demonstrate SQL skills and techniques typically us
        ● number_of_orders: The total number of orders containing products from that category. <br />
 
               CREATE VIEW product_category_sales AS
-                    SELECT
-                    pl.productLine AS productline,
+                    SELECT pl.productLine AS productline,
                     SUM(od.quantityOrdered * od.priceEach) AS total_sales,
                     COUNT(DISTINCT o.orderNumber) AS number_of_orders
                     FROM
@@ -174,15 +173,24 @@ The aim of this project is to demonstrate SQL skills and techniques typically us
 
 12. >**Rank the customers based on their order frequency**
 
-    		SELECT c.customerName,
-    		 COUNT(o.orderNumber) AS order_count,
-    		 RANK() OVER (ORDER BY COUNT(o.orderNumber) DESC) AS customer_rank
-		 FROM customers c
-		 JOIN 
-    		 orders o ON c.customerNumber = o.customerNumber
-		 GROUP BY 
-    		 c.customerNumber, c.customerName
-		 ORDER BY 
-    		 customer_rank;
+    	SELECT c.customerName,
+    	COUNT(o.orderNumber) AS order_count,
+    	RANK() OVER (ORDER BY COUNT(o.orderNumber) DESC) AS customer_rank
+    	FROM customers c
+    	JOIN 
+    	orders o ON c.customerNumber = o.customerNumber
+    	GROUP BY 
+    	c.customerNumber, c.customerName
+    	ORDER BY 
+    	customer_rank;
+
+13. >**Find out how many product lines are there for which the buy price value is greater than the average of buy price value. Show the output as product line and its count.**
+
+
+    	SELECT productLine, COUNT(*) AS count
+    	FROM products
+    	WHERE buyPrice > (SELECT AVG(buyPrice) FROM products)
+    	GROUP BY productLine
+    	order by count desc;
      		
 
